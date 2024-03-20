@@ -314,7 +314,7 @@ class FeesPage extends StatelessWidget {
                     SizedBox(
                       width: double.infinity,
                       child: Card(
-                        shape: RoundedRectangleBorder(
+                        shape: const RoundedRectangleBorder(
                           borderRadius: BorderRadius.only(
                             topLeft: Radius.circular(20.0),
                             topRight: Radius.circular(20.0),
@@ -389,9 +389,12 @@ class FeesPage extends StatelessWidget {
                                                     ),
                                                   )),
                                               Padding(
-                                                padding: EdgeInsets.only(left: 4, right: 4),
+                                                padding: EdgeInsets.only(
+                                                    left: 4, right: 4),
                                                 child: Row(
-                                                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                                  mainAxisAlignment:
+                                                      MainAxisAlignment
+                                                          .spaceBetween,
                                                   children: [
                                                     const Text('Payment Id'),
                                                     const Text('Date'),
@@ -409,11 +412,18 @@ class FeesPage extends StatelessWidget {
                                                   });
                                                 },
                                                 child: Padding(
-                                                  padding: EdgeInsets.only(left: 4, right: 4),
+                                                  padding: EdgeInsets.only(
+                                                      left: 4, right: 4),
                                                   child: Row(
-                                                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                                    mainAxisAlignment:
+                                                        MainAxisAlignment
+                                                            .spaceBetween,
                                                     children: [
-                                                      const Text('Bkash 557/1', style: TextStyle(color: Colors.blue),),
+                                                      const Text(
+                                                        'Bkash 557/1',
+                                                        style: TextStyle(
+                                                            color: Colors.blue),
+                                                      ),
                                                       const Text('04/05/2023'),
                                                       const Text('550.0Bdt'),
                                                       const Text('50.50Bdt'),
@@ -551,11 +561,31 @@ class FeesPage extends StatelessWidget {
                                         false ||
                                     listOfFeesCardData[index].partial == true)
                                   InkWell(
-                                    onTap: () {},
-                                    child: ColoredBox(
+                                    onTap: () {
+                                      showDialog(
+                                        context: context,
+                                        builder: (_) => AlertDialog(
+
+                                          title: ColoredBox(color: Colors.blue, child: Row(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [const Text('Payment'), InkWell(onTap: () {
+                                            Navigator.pop(context);
+                                          }, child: Icon(Icons.close))],)),
+                                          content: SizedBox(
+                                            height: 100,
+                                            width: 100,
+                                            child: Column(
+                                              children: [
+                                                ElevatedButton(onPressed: () {}, child: const Text('online payment')),
+                                                ElevatedButton(onPressed: () {}, child: const Text('offline payment'),),
+                                              ],
+                                            ),
+                                          ),
+                                        ),
+                                      );
+                                    },
+                                    child: const ColoredBox(
                                       color: Colors.green,
                                       child: Padding(
-                                        padding: const EdgeInsets.all(2.0),
+                                        padding: EdgeInsets.all(2.0),
                                         child: Text('Pay'),
                                       ),
                                     ),

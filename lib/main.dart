@@ -44,22 +44,39 @@ class _MyHomePageState extends State<MyHomePage> {
   Widget build(BuildContext context) {
     var statusBarHeight = MediaQuery.of(context).padding.top;
     var appBarHeight = kToolbarHeight;
+
     return Scaffold(
+
       drawer: const MyDrawer(),
       body: CustomScrollView(
         slivers: <Widget>[
           SliverAppBar(
+
             title: Text('Mohammad Saidi'),
             actions: [
               Padding(
                 padding: EdgeInsets.only(right: 20.0),
-                child: Icon(Icons.notification_add),
+                child: CircleAvatar(
+                  backgroundImage: AssetImage('assets/images/saidi.jpg'),
+                )
               ),
             ],
+
+
             pinned: true,
-            expandedHeight: 210.0,
+            expandedHeight: 250.0,
+            collapsedHeight: 250.0,
+
+
+            // flexibleSpace: FlexibleSpaceBar(
+            //   background: MyFlexibleAppBar(),
+            // ),
+
+
             flexibleSpace: FlexibleSpaceBar(
-              background: MyFlexibleAppBar(),
+              background: ColoredBox(
+                color: Colors.blue,
+              ),
             ),
           ),
 

@@ -15,15 +15,15 @@ class MyDrawer extends StatelessWidget {
           //padding: EdgeInsets.zero,
           children: [
             SizedBox(
-              height: 100.0,
+              height: 150.0,
               child: DrawerHeader(
                 padding: EdgeInsets.zero,
                 margin: EdgeInsets.zero,
                 decoration: BoxDecoration(
-                  color: Colors.tealAccent,
+                  color: Colors.blue,
                 ),
                 child: ListTile(
-                  leading: Image.asset('assets/images/user.png'),
+                  leading: CircleAvatar(backgroundImage: AssetImage('assets/images/saidi.jpg'),),
                   title: const Text('Mohammad Saidi'),
                   subtitle: const Text('Class 3 (A)'),
                 ),
@@ -55,17 +55,22 @@ class MyDrawer extends StatelessWidget {
               alignment: Alignment.center,
             ),
             Spacer(),
-            // Container(
-            //   alignment: Alignment.bottomCenter,
-            //   padding: EdgeInsets.all(16),
-            //   child: Text(
-            //     'Bottom Center Text',
-            //     style: TextStyle(
-            //       fontSize: 18,
-            //       fontWeight: FontWeight.bold,
-            //     ),
-            //   ),
-            // ),
+            Container(
+              alignment: Alignment.bottomCenter,
+              padding: EdgeInsets.all(16),
+              child: Column(
+                children: [
+                  Text(
+                    'PoweredBy LeoTech',
+                    style: TextStyle(
+                      fontSize: 18,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                  Image.asset('assets/images/leotech-logo.png')
+                ],
+              ),
+            ),
           ],
         ),
       ),
