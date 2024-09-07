@@ -1,5 +1,7 @@
+import 'package:aamarpay/aamarpay.dart';
 import 'package:flutter/material.dart';
 import 'package:schoobeeapp/models/fees_card.dart';
+import 'package:schoobeeapp/pages/aamar_pay_page.dart';
 
 class FeesPage extends StatelessWidget {
   const FeesPage({super.key, required this.listOfFeesCardData});
@@ -574,7 +576,20 @@ class FeesPage extends StatelessWidget {
                                             width: 100,
                                             child: Column(
                                               children: [
-                                                ElevatedButton(onPressed: () {}, child: const Text('online payment')),
+                                                ElevatedButton(onPressed: () {
+
+
+                                                  Navigator.push(context, MaterialPageRoute(builder: (context) {
+                                                    return MyPay(listOfFeesCardData[
+                                                    index]
+                                                        .balanceAmount);
+                                                  }));
+
+
+
+
+
+                                                }, child: const Text('online payment'),),
                                                 ElevatedButton(onPressed: () {}, child: const Text('offline payment'),),
                                               ],
                                             ),

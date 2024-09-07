@@ -55,7 +55,7 @@ var menuodel2 = [
 
     children: [
       Icon(Icons.class_),
-      const Text('Class'),
+      const Text('Class', style: TextStyle(color: Colors.blue)),
     ],
   ),
   Column(

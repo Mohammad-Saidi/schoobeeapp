@@ -18,8 +18,9 @@ class GridElementWidget extends StatelessWidget {
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          Icon(element.icon),
-          Expanded(child: Text(element.name, textAlign: TextAlign.center,)),
+          element.image,
+         //Icon(element.icon),
+          Expanded(child: Text(element.name, textAlign: TextAlign.center)),
         ],
       ),
 

@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:schoobeeapp/pages/home_page.dart';
+import 'package:schoobeeapp/pages/sign_in_screen.dart';
 import 'package:schoobeeapp/widgets/card_widget.dart';
 import 'package:schoobeeapp/widgets/drawer.dart';
 import 'package:schoobeeapp/widgets/home_page_first_part.dart';
@@ -27,146 +29,28 @@ class MyApp extends StatelessWidget {
           elevation: 10.0,
         ),
       ),
-      home: const MyHomePage(),
+      home: const MainPage(),
     );
   }
 }
 
-class MyHomePage extends StatefulWidget {
-  const MyHomePage({super.key});
+
+class MainPage extends StatefulWidget {
+  const MainPage({super.key});
 
   @override
-  State<MyHomePage> createState() => _MyHomePageState();
+  State<MainPage> createState() => _MainPageState();
 }
 
-class _MyHomePageState extends State<MyHomePage> {
+class _MainPageState extends State<MainPage> {
   @override
   Widget build(BuildContext context) {
-    var statusBarHeight = MediaQuery.of(context).padding.top;
-    var appBarHeight = kToolbarHeight;
-
     return Scaffold(
+      appBar: AppBar(),
+      body: SignInScreen(),
 
-      drawer: const MyDrawer(),
-      body: CustomScrollView(
-        slivers: <Widget>[
-          SliverAppBar(
-
-            title: Text('Mohammad Saidi'),
-            actions: [
-              Padding(
-                padding: EdgeInsets.only(right: 20.0),
-                child: CircleAvatar(
-                  backgroundImage: AssetImage('assets/images/saidi.jpg'),
-                )
-              ),
-            ],
-
-
-            pinned: true,
-            expandedHeight: 250.0,
-            collapsedHeight: 250.0,
-
-
-            // flexibleSpace: FlexibleSpaceBar(
-            //   background: MyFlexibleAppBar(),
-            // ),
-
-
-            flexibleSpace: FlexibleSpaceBar(
-              background: ColoredBox(
-                color: Colors.blue,
-              ),
-            ),
-          ),
-
-          SliverList.builder(
-            itemCount: cards.length,
-            itemBuilder: (BuildContext context, int index) {
-              return CardWidget(cardData: cards[index]);
-            },
-          ),
-
-          //           ),
-          //         ),
-          //       ),
-          //       Padding(
-          //         padding: const EdgeInsets.all(2.0),
-          //         child: Card(
-          //           elevation: 10.0,
-          //           child: SizedBox(
-          //             width: double.infinity,
-          //             height: 250,
-          //             child: InkWell(
-          //               child: Padding(
-          //                 padding: const EdgeInsets.fromLTRB(10, 15, 10, 0),
-          //                 child: GridView.builder(
-          //                   physics: ScrollPhysics(),
-          //                   itemCount: menuodel.length,
-          //                   // physics: NeverScrollableScrollPhysics(),
-          //                   gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-          //                     crossAxisCount: 4,
-          //                     mainAxisSpacing: 14,
-          //                     crossAxisSpacing: 14,
-          //                   ),
-          //                   itemBuilder: (context, index) {
-          //                     return GestureDetector(
-          //                       onTap: () {
-          //                         if (index == 0) {}
-          //                       },
-          //                       child: Container(
-          //                         //alignment: Alignment.center,
-          //                         child: menuodel2[index],
-          //                       ),
-          //                     );
-          //                   },
-          //                 ),
-          //               ),
-          //             ),
-          //           ),
-          //         ),
-          //       ),
-          //       Padding(
-          //         padding: const EdgeInsets.all(2.0),
-          //         child: Card(
-          //           elevation: 10.0,
-          //           child: SizedBox(
-          //             width: double.infinity,
-          //             height: 250,
-          //             child: InkWell(
-          //               child: Padding(
-          //                 padding: const EdgeInsets.fromLTRB(10, 15, 10, 0),
-          //                 child: GridView.builder(
-          //                   physics: ScrollPhysics(),
-          //                   itemCount: menuodel.length,
-          //                   // physics: NeverScrollableScrollPhysics(),
-          //                   gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-          //                     crossAxisCount: 4,
-          //                     mainAxisSpacing: 14,
-          //                     crossAxisSpacing: 14,
-          //                   ),
-          //                   itemBuilder: (context, index) {
-          //                     return GestureDetector(
-          //                       onTap: () {
-          //                         if (index == 0) {}
-          //                       },
-          //                       child: Container(
-          //                         //alignment: Alignment.center,
-          //                         child: menuodel2[index],
-          //                       ),
-          //                     );
-          //                   },
-          //                 ),
-          //               ),
-          //             ),
-          //           ),
-          //         ),
-          //       ),
-          //     ],
-          //   ),
-          // ),
-        ],
-      ),
     );
   }
 }
+
+

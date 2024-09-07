@@ -48,69 +48,64 @@ List<FeesCardData> listOfFeesCardData = [
 ];
 
 List<CardData> cards = [
-  const CardData(
+  CardData(
     title: 'E-Learning',
     gridElements: [
-      GridElement(icon: Icons.home, name: 'Home Work', page: null),
-      GridElement(icon: Icons.assignment, name: 'Assignment', page: null),
-      GridElement(icon: Icons.play_lesson, name: 'Lesson Plan', page: null),
+      GridElement(image: Image.asset('assets/images/send_money.jpg'),name: 'Home Work', page: null),
+      GridElement(image: Image.asset('assets/images/mobile_recharge.jpg'), name: 'Assignment', page: null),
+      GridElement(image: Image.asset('assets/images/cash_out.jpg'), name: 'Lesson Plan', page: null),
       GridElement(
-          icon: Icons.online_prediction,
-          name: 'Online Examination',
+          image: Image.asset('assets/images/make_payment.jpg'),
+          name: 'Online',
           page: null),
-      GridElement(icon: Icons.download, name: 'Download Center', page: null),
-      GridElement(icon: Icons.golf_course, name: 'Online Course', page: null),
-      GridElement(icon: Icons.live_help, name: 'Live Course', page: null),
+      GridElement(image: Image.asset('assets/images/add_money.jpg'), name: 'Download', page: null),
+      GridElement(image: Image.asset('assets/images/pay_bill.jpg'), name: 'Online Course', page: null),
+      GridElement(image: Image.asset('assets/images/savings.png'), name: 'Live Course', page: null),
     ],
   ),
-  const CardData(
+  CardData(
     title: 'Academics',
     gridElements: [
-      GridElement(icon: Icons.home, name: 'Home Work', page: null),
-      GridElement(icon: Icons.assignment, name: 'Assignment', page: null),
-      GridElement(icon: Icons.play_lesson, name: 'Lesson Plan', page: null),
+      GridElement(image: Image.asset('assets/images/send_money.jpg'),name: 'Home Work', page: null),
+      GridElement(image: Image.asset('assets/images/mobile_recharge.jpg'), name: 'Assignment', page: null),
+      GridElement(image: Image.asset('assets/images/cash_out.jpg'), name: 'Lesson Plan', page: null),
       GridElement(
-          icon: Icons.online_prediction,
-          name: 'Online Examination',
+          image: Image.asset('assets/images/make_payment.jpg'),
+          name: 'Online',
           page: null),
-      GridElement(icon: Icons.download, name: 'Download Center', page: null),
-      GridElement(icon: Icons.golf_course, name: 'Online Course', page: null),
-      GridElement(icon: Icons.live_help, name: 'Live Course', page: null),
+      GridElement(image: Image.asset('assets/images/add_money.jpg'), name: 'Download', page: null),
+      GridElement(image: Image.asset('assets/images/pay_bill.jpg'), name: 'Online Course', page: null),
+      GridElement(image: Image.asset('assets/images/savings.png'), name: 'Live Course', page: null),
     ],
   ),
-  const CardData(
+  CardData(
     title: 'Communicate',
     gridElements: [
-      GridElement(icon: Icons.home, name: 'Home Work', page: null),
-      GridElement(icon: Icons.assignment, name: 'Assignment', page: null),
-      GridElement(icon: Icons.play_lesson, name: 'Lesson Plan', page: null),
+      GridElement(image: Image.asset('assets/images/send_money.jpg'),name: 'Home Work', page: null),
+      GridElement(image: Image.asset('assets/images/mobile_recharge.jpg'), name: 'Assignment', page: null),
+      GridElement(image: Image.asset('assets/images/cash_out.jpg'), name: 'Lesson Plan', page: null),
       GridElement(
-          icon: Icons.online_prediction,
-          name: 'Online Examination',
+          image: Image.asset('assets/images/make_payment.jpg'),
+          name: 'Online',
           page: null),
-      GridElement(icon: Icons.download, name: 'Download Center', page: null),
-      GridElement(icon: Icons.golf_course, name: 'Online Course', page: null),
-      GridElement(icon: Icons.live_help, name: 'Live Course', page: null),
+      GridElement(image: Image.asset('assets/images/add_money.jpg'), name: 'Download', page: null),
+      GridElement(image: Image.asset('assets/images/pay_bill.jpg'), name: 'Online Course', page: null),
+      GridElement(image: Image.asset('assets/images/savings.png'), name: 'Live Course', page: null),
     ],
   ),
   CardData(
     title: 'Other',
     gridElements: [
+      GridElement(image: Image.asset('assets/images/send_money.jpg'),name: 'Home Work', page: null),
+      GridElement(image: Image.asset('assets/images/mobile_recharge.jpg'), name: 'Assignment', page: null),
+      GridElement(image: Image.asset('assets/images/cash_out.jpg'), name: 'Lesson Plan', page: null),
       GridElement(
-          icon: Icons.home,
-          name: 'Fees',
-          page: FeesPage(
-            listOfFeesCardData: listOfFeesCardData,
-          )),
-      GridElement(icon: Icons.assignment, name: 'Assignment', page: null),
-      GridElement(icon: Icons.play_lesson, name: 'Lesson Plan', page: null),
-      GridElement(
-          icon: Icons.online_prediction,
-          name: 'Online Examination',
+          image: Image.asset('assets/images/make_payment.jpg'),
+          name: 'Online',
           page: null),
-      GridElement(icon: Icons.download, name: 'Download Center', page: null),
-      GridElement(icon: Icons.golf_course, name: 'Online Course', page: null),
-      GridElement(icon: Icons.live_help, name: 'Live Course', page: null),
+      GridElement(image: Image.asset('assets/images/add_money.jpg'), name: 'Download', page: null),
+      GridElement(image: Image.asset('assets/images/pay_bill.jpg'), name: 'Online Course', page: null),
+      GridElement(image: Image.asset('assets/images/savings.png'), name: 'Live Course', page: null),
     ],
   ),
 ];
@@ -123,10 +118,10 @@ class CardData {
 }
 
 class GridElement {
-  final IconData icon;
+  final Image image;
   final String name;
   final Widget? page;
 
   const GridElement(
-      {required this.icon, required this.name, required this.page});
+      {required this.image, required this.name, required this.page});
 }
